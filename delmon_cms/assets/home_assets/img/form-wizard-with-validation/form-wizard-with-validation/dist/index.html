@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Form Wizard with Validation</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section class="wizard-section">
+		<div class="row no-gutters">
+			
+			<div class="col-lg-6 col-md-6">
+				<div class="form-wizard">
+					<form action="" method="post" role="form">
+						<div class="form-wizard-header">
+							<p>Fill all form field to go next step</p>
+							<ul class="list-unstyled form-wizard-steps clearfix">
+								<li class="active"><span>1</span></li>
+								<li><span>2</span></li>
+								<li><span>3</span></li>
+								<li><span>4</span></li>
+							</ul>
+						</div>
+						<fieldset class="wizard-fieldset show">
+							<div class="row">
+								<div class="col-md-4">
+								<div class="drag-area">
+<div class="icon-career"><i class="fas fa-user"></i></div>
+<button>Browse File</button>
+<input type="file" hidden>
+</div>
+								</div>
+								<div class="col-md-8">
+								<div class="row">
+								<div class="col-md-6">
+								   <div class="form-group has-validation">
+									   <label class="fl-career" for="name">Name<span class="sp">*<span></label> 
+									   <input class="form-control form-career  wizard-required" type="text" name="name" id="name" placeholder="" required> 
+									   <div class="wizard-form-error"></div>
+								   </div>
+							   </div>
+							   <div class="col-md-6">
+								   <div class="form-group">
+									   <label class="fl-career">Father Name</label> 
+									   <input class="form-control form-career wizard-required" type="email" name="father-name" placeholder="" required> 
+									   <div class="wizard-form-error"></div>
+									</div>
+							   </div>
+							   <div class="col-md-6">
+								   <div class="form-group">
+									   <label class="fl-career">Grandfather Name</label> 
+									   <input class="form-control form-career" type="text" name="g-name" placeholder=""> 
+								   </div>
+							   </div>
+							   <div class="col-md-6">
+								   <div class="form-group">
+									   <label class="fl-career">Family Name</label> 
+									   <input class="form-control form-career" type="email" name="fam-name" placeholder=""> 
+								   </div>
+							   </div>
+</div>
+								</div>
+</div>    
+					   <h6 class="text-left add-red">Address</h6>
+						   <div class="row">
+							   
+							   <div class="col-md-8">
+								   <div class="form-group">
+									   <label class="fl-career">Flat / Building / Vila<span class="sp">*<span></label> 
+									   <input class="form-control form-career" type="text" name="flat-name" placeholder=""> 
+								   </div>
+							   </div>
+							   <div class="col-md-4">
+								   <div class="form-group">
+									   <label class="fl-career">Road<span class="sp">*<span></label> 
+									   <input class="form-control form-career" type="text" name="r-name" placeholder=""> 
+								   </div>
+							   </div>
+							   <div class="col-md-4">
+								   <div class="form-group">
+									   <label class="fl-career">Block<span class="sp">*<span></label> 
+									   <input class="form-control form-career" type="email" name="b-name" placeholder=""> 
+								   </div>
+							   </div>
+							   
+							   <div class="col-md-4">
+								   <div class="form-group">
+									   <label class="fl-career">Area<span class="sp">*<span></label> 
+									   <input class="form-control form-career" type="password" name="area-name" placeholder=""> 
+								   </div>
+							   </div>
+							   
+							   
+						   </div> 
+						   <!-- end row -->
+						   <h6 class="text-left add-red">Marital Information</h6>
+						   <div class="row">
+							   
+							   <div class="col-md-4">
+								   <div class="form-group">
+									   <label class="fl-career">Nationality<span class="sp">*<span></label> 
+									   <input class="form-control form-career" type="text" name="nat-name" placeholder=""> 
+								   </div>
+							   </div>
+							   <div class="col-md-4">
+								   <div class="form-group">
+									   <label class="fl-career">CPR NO.<span class="sp">*<span></label> 
+									   <input class="form-control form-career" type="text" name="cpr-name" placeholder=""> 
+								   </div>
+							   </div>
+							   <div class="col-md-4">
+								   <div class="form-group">
+									   <label class="fl-career">Sex<span class="sp">*<span></label> 
+									   <input class="form-control form-career" type="email" name="sex-name" placeholder=""> 
+								   </div>
+							   </div>
+							   
+							  
+								
+							   <div class="col-md-4">
+								   <div class="form-group">
+									   <label class="fl-career">Martial Status<span class="sp">*<span></label> 
+									   <input class="form-control form-career" type="password" name="mat-name" placeholder=""> 
+								   </div>
+							   </div>
+								
+							   <div class="col-md-4">
+								   <div class="form-group">
+									   <label class="fl-career">Date of Birth</label> 
+									   <input class="form-control form-career" type="password" name="dob-name" placeholder=""> 
+								   </div>
+							   </div>
+							   
+						   </div>
+						   <!-- end-row -->
+							<div class="form-group clearfix">
+								<a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+							</div>
+						</fieldset>	
+						<fieldset class="wizard-fieldset">
+							<h6 class="text-left add-red">Education Level</h6>
+                                    <div class="row">
+                                        
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="fl-career">Last Eductaion Qualifiation</label> 
+                                                <input class="form-control form-career" type="text" name="l-name" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="fl-career">Speciality</label> 
+                                                <input class="form-control form-career" type="text" name="s-name" placeholder=""> 
+                                            </div>
+                                        </div>
+</div>
+                                        <h6 class="text-left add-red">Contacts</h6>
+                                        <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="fl-career">Email<span class="sp">*<span></label> 
+                                                <input class="form-control form-career" type="email" name="email" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="fl-career">Telephone No.1<span class="sp">*<span></label> 
+                                                <input class="form-control form-career" type="password" name="tel-one" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="fl-career">Telephone No.2</label> 
+                                                <input class="form-control form-career" type="password" name="tel-two" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label class="fl-career">Telephone No.3</label> 
+                                                <input class="form-control form-career" type="password" name="tel-three" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        
+                                    </div> 
+                                    <h6 class="text-left add-red">Relative Telephone No</h6>
+                                    <h6 class="c-career">First Person</h6>
+                                        <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="fl-career">Name<span class="sp">*<span></label> 
+                                                <input class="form-control form-career" type="email" name="rel-name" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="fl-career">Job Title<span class="sp">*<span></label> 
+                                                <input class="form-control form-career" type="password" name="job" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="fl-career">Relationship<span class="sp">*<span></label> 
+                                                <input class="form-control form-career" type="password" name="ship" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label class="fl-career">Tel No.</label> 
+                                                <input class="form-control form-career" type="password" name="tel-four" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        
+                                    </div> 
+                                    <h6 class="c-career">Second Person</h6>
+                                        <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="fl-career">Name</label> 
+                                                <input class="form-control form-career" type="email" name="sp-name" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="fl-career">Job Title</label> 
+                                                <input class="form-control form-career" type="password" name="job-person" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="fl-career">Relationship</label> 
+                                                <input class="form-control form-career" type="password" name="ship-person" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label class="fl-career">Tel No.</label> 
+                                                <input class="form-control form-career" type="password" name="tel-five" placeholder=""> 
+                                            </div>
+                                        </div>
+                                        
+                                    </div> 
+							<div class="form-group clearfix">
+								<a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
+								<a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+							</div>
+						</fieldset>	
+						<fieldset class="wizard-fieldset">
+							<h6 class="text-left add-red">General Information</h6>
+                                     <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="fl-career">Do you have relative person in the company?</label> 
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="radio-one" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Yes</label>
+</div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="radio-two" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">No</label>
+</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="fl-career">Do you have driving license?</label> 
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Yes</label>
+</div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">No</label>
+</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="fl-career">Do you suffer from chronic disease?</label> 
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Yes</label>
+</div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">No</label>
+</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="fl-career">Do you suffer from any disability?</label> 
+                                                                                    </div>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Yes</label>
+</div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">No</label>
+</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="fl-career">Do you work in current time?</label> 
+                                                                                    </div>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Yes</label>
+</div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">No</label>
+</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="fl-career">Do accept to work additional time & shift work?</label> 
+                                                                                    </div>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Yes</label>
+</div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">No</label>
+</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="fl-career">Requirement Job</label> 
+                                            <input class="form-control form-career" type="text" name="req-name" placeholder=""> 
+                                                                                   </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="fl-career">Expected Salary</label> 
+                                            <input class="form-control form-career" type="text" name="exp-salary" placeholder=""> 
+                                        </div>
+                                    </div>
+</div>
+                                    <hr class="hr">
+                                    <h6 class="text-left add-red">Work Experince</h6>
+                                    <h6 class="c-career">Company (1)</h6>
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="fl-career">Name</label> 
+                                            <input class="form-control form-career" type="text" name="com-one" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="fl-career">Job Title</label> 
+                                            <input class="form-control form-career" type="text" name="title-one" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="fl-career">From</label> 
+                                            <input class="form-control form-career" type="text" name="from-one" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="fl-career">To</label> 
+                                            <input class="form-control form-career" type="text" name="to-one" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                    <div class="form-group">
+                                    <label class="fl-career" for="validationTextarea">Reason of leaving</label>
+    <textarea class="form-control form-career" name="reason-one" required></textarea>
+</div>
+</div>
+                                       </div>
+                                       <br>
+                                       <h6 class="c-career">Company (2)</h6>
+
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="fl-career">Name</label> 
+                                            <input class="form-control form-career" type="text" name="com-two" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="fl-career">Job Title</label> 
+                                            <input class="form-control form-career" type="text" name="title-two" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="fl-career">From</label> 
+                                            <input class="form-control form-career" type="text" name="from-two" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="fl-career">To</label> 
+                                            <input class="form-control form-career" type="text" name="to-two" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                    <div class="form-group">
+                                    <label class="fl-career" for="validationTextarea">Reason of leaving</label>
+    <textarea class="form-control form-career" name="reason-two"  required></textarea>
+</div>
+</div>
+                                       </div>
+                                       <br>
+                                       <h6 class="c-career">Company (3)</h6>
+
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="fl-career">Name</label> 
+                                            <input class="form-control form-career" type="text" name="com-three" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="fl-career">Job Title</label> 
+                                            <input class="form-control form-career" type="text" name="title-three" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="fl-career" >From</label> 
+                                            <input class="form-control form-career" type="text" name="from-three" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="fl-career">To</label> 
+                                            <input class="form-control form-career" type="text" name="to-three" placeholder=""> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                    <div class="form-group">
+                                    <label class="fl-career" for="validationTextarea">Reason of leaving</label>
+    <textarea class="form-control form-career" name="reason-three" required></textarea>
+</div>
+</div>
+							<div class="form-group clearfix">
+								<a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
+								<a href="javascript:;" class="form-wizard-submit float-right">Submit</a>
+							</div>
+						</fieldset>	
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

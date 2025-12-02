@@ -1,0 +1,136 @@
+<style type="text/css">
+	.navigation .menu .menu-icon {
+
+		top: 15px !important;
+		left: 15px !important;
+		width: 25px !important;
+		font-size: 12px !important;
+	}
+	.navigation .menu>li>a {
+		padding: 14px 30px 14px 50px !important;
+	}
+	.navigation .menu>li.active>a {
+		background: #E31D1A !important;
+		color: white !important;
+	}
+	.navigation li .active a {
+		background-color: #3889eb !important;
+		border-color: #ffff !important;
+		color: white !important;
+	}
+	.main-content {
+		padding-top: 70px !important;
+	}
+
+</style>
+<div class="main-menu">
+	<header class="header">
+		<!-- <img src="assets/images/logo.png"> -->
+		<button type="button" class="button-close fa fa-times js__menu_close"></button>
+	</header>
+	<!-- /.header -->
+	<div class="content">
+	<?php $menu = $this->Admin_model->get_single_data('top_header',array('id'=>'1')) ;?>
+		<div class="navigation">
+			<ul class="menu js__accordion">
+				<li class="logo_sec text-center">
+                    <img src="<?php echo base_url()?>uploads/images/<?php echo $menu->logoe?>" alt="" class="shake">				</li>
+				<li id="home">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/banners"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span> Banners </span></a></li>
+
+				<li id="2">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/navigation"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span>Top Navigation </span></a></li>
+
+				<li id="3">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/home"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span>Home Page </span></a></li>
+
+                                <!-- <li id="4" >
+                <a class="waves-effect" href="<?php echo base_url() ?>admin/about"><img class="menu-icon " src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+                <span>About</span></a></li> -->
+
+				<li id="4">
+                    <a class="waves-effect parent-item js__control" href="#"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png"><span>About</span><span
+							class="menu-arrow fa fa-angle-down"></span></a>
+					<ul class="sub-menu js__content">
+						<li><a href="<?php echo base_url()?>admin/about"> About Page </a></li>
+						<li><a href="<?php echo base_url()?>admin/academic_year">Academic Year </a></li>
+						<li><a href="<?php echo base_url()?>admin/academic_report"> Academic Year Report </a></li>
+						<li><a href="<?php echo base_url()?>admin/financial_report"> Financial Year Report </a></li>
+					</ul>
+
+		
+        <li id="5">
+                    <a class="waves-effect parent-item js__control" href="#"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png"><span>Management</span><span
+							class="menu-arrow fa fa-angle-down"></span></a>
+					<ul class="sub-menu js__content">
+						<li><a href="<?php echo base_url()?>admin/managetype"> Management Types </a></li>
+						<li><a href="<?php echo base_url()?>admin/commiteetype"> Committee Types </a></li>
+						<li><a href="<?php echo base_url()?>admin/management"> Management Images </a></li>
+					</ul>
+				</li>
+
+				<li id="6">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/products"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span>Products</span></a></li>
+
+				<li id="7">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/services"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span>Services </span></a></li>
+
+				<li id="8">
+						<a class="waves-effect parent-item js__control" href="#"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png"><span>Gallery</span><span
+							class="menu-arrow fa fa-angle-down"></span></a>
+					<ul class="sub-menu js__content">
+					    <li><a href="<?php echo base_url()?>admin/gallery_type">Types </a></li>
+						<li><a href="<?php echo base_url()?>admin/gallery"> Images </a></li>	
+					</ul>
+		     	</li>
+
+				<li id="9">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/career"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span>Career </span></a></li>
+
+				<li id="10">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/career_request"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span>Career List</span></a></li>
+
+				<li id="12">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/messages"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span>Contact Messages </span></a></li>
+
+				<li id="11">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/contact"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span>Contact Us </span></a></li>
+
+				<li id="13">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/footer"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/dashboard.png">
+						<span>Footer </span></a></li>
+
+				<li id="14">
+					<a class="waves-effect" href="<?php echo base_url() ?>admin/logout"><img class="menu-icon "
+							src="<?php echo base_url()?>assets/images/sideheader_icons/logout.png">
+						<span>Logout </span></a></li>
+			</ul>
+
+		</div>
+
+	</div>
+	<!-- /.content -->
+</div>
+<!-- /.main-menu -->

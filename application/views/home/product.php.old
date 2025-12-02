@@ -1,0 +1,188 @@
+<?php
+  $session = $this->session->userdata('lang');
+    if(empty($session)){ 
+    $this->session->set_userdata('lang', 'en');
+    $this->session->set_userdata('dir', 'ltr');
+    } 
+?>
+<!doctype html>
+<html lang="<?php echo $_SESSION["lang"] ?>" dir="<?php echo $_SESSION["dir"] ?>">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title>Delmon Poultry</title>
+	<meta content="" name="description">
+	<meta content="" name="keywords">
+
+	<!-- Favicons -->
+	<link href="<?php echo base_url()?>assets/home_assets/img/fav.png" rel="icon">
+
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Vendor CSS Files -->
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+	<link href="<?php echo base_url()?>assets/home_assets/css/variables.css" rel="stylesheet">
+
+
+	<!-- Template Main CSS File -->
+	<link href="<?php echo base_url()?>assets/home_assets/css/main.css" rel="stylesheet">
+	<style>
+		section {
+			padding: 20px 0 !important;
+			overflow: visible !important;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<!-- ======= Header ======= -->
+	<?php 
+	$data['page'] = 'product' ;
+	$data['menu'] = $menu ;
+	$data['link'] = $link ;
+	$data['address'] = $address ;
+	$data['contact'] = $contact ;
+	$this->load->view('home/header',$data);
+ 	?>
+
+	<section id="product" style="background:url(<?php echo base_url()?>uploads/images/banners/<?php echo $banner->image ?>) !important;" class="d-flex align-items-center">
+		<div class="container">
+			<div class="row">
+
+				<div class="section-header">
+					<h2 class="text-center product-head" style="color:white;font-weight:900;"><?php 
+            if($session == 'en'){
+                echo $banner->banner_title  ;
+            }else{
+                echo $banner->banner_title_ar ; 
+            }
+            ?> </h2>
+					<p class="text-center  product-head-p" style="color:white;"><?php 
+            if($session == 'en'){
+                echo $banner->banner_content  ;
+            }else{
+                echo $banner->banner_content_ar ; 
+            }
+            ?></p>
+				</div>
+
+
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<section class="products">
+
+		<div class="container">
+			<br><br><br>
+			<div class="row">
+
+				<div class="col-md-6">
+				<a href="" target="_blank"><img src="assets/home_assets/img/feed-mill-logo-1.png" width="200px" height="200px"></a>
+				</div>
+				<div class="col-md-6">
+				<a href="" target="_blank"><img src="assets/home_assets/img/Farm-Chicken-Logo.png" width="200px" height="200px"></a>
+				</div>
+
+							<?php foreach ($products as $value) {?>
+				<div class="col-md-4">
+					<div class="item-manage">
+						<div class="effect-1">
+							<div class="effect-img">
+								<img src="<?php echo base_url()?>uploads/images/products/<?php echo $value['image']?>" alt="Team Image">
+							</div>
+							<div class="effect-text">
+								<h2><?php 
+								if($session == 'en'){
+									echo $value['name']   ;
+								}else{
+									echo $value['name_ar']  ; 
+								}
+								?></h2>
+								<p><?php 
+								if($session == 'en'){
+									echo $value['description']   ;
+								}else{
+									echo $value['description_ar']  ; 
+								}
+								?></p>
+
+							</div>
+						</div>
+						<?php  $home = $this->Admin_model->get_single_data('home_page',array('id'=>1)) ;  ?>
+						<a href="" class="btn-pro"> <?php if($session == 'en'){
+                              echo $home->sec2_btn   ;
+                            }else{
+                              echo $home->sec2_btn_ar  ; 
+                            }?></a>
+					</div>
+				</div>
+				<?php } ?>
+
+			</div>
+		</div>
+		</div>
+		</div>
+	</section>
+
+	<!-- Tabs -->
+
+
+	<!-- ======= Footer ======= -->
+	<?php $this->load->view('home/footer',$data);?>
+	<!-- End Footer -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<!-- Vendor JS Files -->
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/aos/aos.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/php-email-form/validate.js"></script>
+
+	<!-- Template Main JS File -->
+	<script src="<?php echo base_url()?>assets/home_assets/js/main.js"></script>
+	<script>
+		window.onscroll = function () {
+			myFunction()
+		};
+
+		var navbar = document.getElementById("nav-pills");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+			if (window.pageYOffset >= sticky) {
+				navbar.classList.add("sticky")
+			} else {
+				navbar.classList.remove("sticky");
+			}
+		}
+
+	</script>
+	<script>
+if(navigator.userAgent.indexOf('Mac') > 0)
+$('body').addClass('mac-os');if(navigator.userAgent.indexOf('Safari') > 0)
+$('body').addClass('safari');if(navigator.userAgent.indexOf('Chrome') > 0)
+$('body').addClass('chrome');
+</script>
+</body>
+ 
+</html>

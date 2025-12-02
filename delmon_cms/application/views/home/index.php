@@ -1,0 +1,530 @@
+<?php
+  $session = $this->session->userdata('lang');
+  if(empty($session)){ 
+  $this->session->set_userdata('lang', 'en');
+  $this->session->set_userdata('dir', 'ltr');
+  } 
+?>
+<!doctype html>
+<html lang="<?php echo $_SESSION["lang"] ?>" dir="<?php echo $_SESSION["dir"] ?>">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title>Delmon</title>
+	<meta content="" name="description">
+	<meta content="" name="keywords">
+
+	<!-- Favicons -->
+	<link href="<?php echo base_url()?>assets/home_assets/img/fav.png" rel="icon">
+
+
+	<!-- Google Fonts -->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Vendor CSS Files -->
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/home_assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+	<link href="<?php echo base_url()?>assets/home_assets/css/variables.css" rel="stylesheet">
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<?php if($this->session->userdata('lang') !='en') {?>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+		integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+	<?php } ?>
+	<!-- Template Main CSS File -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/home_assets/css/main.css">
+
+
+</head>
+
+<body>
+
+	<!-- ======= Header ======= -->
+	<?php 
+	$data['page'] = 'home' ;
+	$data['menu'] = $menu ;
+	$data['link'] = $link ;
+	$data['address'] = $address ;
+	$data['contact'] = $contact ;
+	$this->load->view('home/header',$data);
+ 	?>
+	<!-- End Header -->
+
+	<section id="hero-animated" class="hero-animated d-flex align-items-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<h2 data-aos="fade-up" data-aos-delay="200"><?php 
+            if($session == 'en'){
+                echo $banner->banner_title  ;
+            }else{
+                echo $banner->banner_title_ar ; 
+            }
+            ?></h2>
+					<p data-aos="fade-up" data-aos-delay="400"><?php 
+            if($session == 'en'){
+                echo $banner->banner_content  ;
+            }else{
+                echo $banner->banner_content_ar ; 
+            }
+            ?></p>
+					<a class="cta-btn align-self-start" href="#" data-aos="fade-up" data-aos-delay="600">Visit Shop</a>
+				</div>
+				<div class="col-md-1">
+					<lottie-player src="<?php echo base_url()?>assets/home_assets/img/lf20_ctyyicne.json" background="transparent"
+						speed="1" style="width: 100px; height: 90px;" loop autoplay class="banner-lot"></lottie-player>
+				</div>
+				<div class="col-md-6">
+					<!-- code -->
+
+					<img src="<?php echo base_url()?>uploads/images/banners/<?php echo $banner->image ?>"
+						class="img-fluid animated">
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+	<section class="why-choose">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="title text-center" data-aos="fade-left">
+						<?php if($session == 'en'){ echo $home->sec1_title; }else{ echo $home->sec1_title_ar; }?></h3>
+					<hr class="linee">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-7" data-aos="fade-left">
+					<h4><span class="num"
+							data-aos="fade-left">01</span><?php if($session == 'en'){ echo $home->secsub1_title; }else{ echo $home->secsub1_title_ar; }?>
+					</h4>
+					<p data-aos="fade-left">
+						<?php if($session == 'en'){ echo $home->secsub1_content; }else{ echo $home->secsub1_content_ar; }?></p>
+				</div>
+				<div class="col-md-5">
+
+					<?php if($this->session->userdata('lang') =='en') { ?>
+					<img src="<?php echo base_url()?>assets/home_assets/img/home/chicken.svg" width="350px"
+						height="350px" class="chicken">
+					<?php } else if ($this->session->userdata('lang') =='ar'){ ?>
+					<img src="<?php echo base_url()?>assets/home_assets/img/chicken.svg" width="250px"
+						height="250px" class="chicken">
+					<?php } ?>
+				</div>
+				<div class="row">
+					<div class="col-md-5"></div>
+					<div class="col-md-5">
+						<lottie-player src="<?php echo base_url()?>assets/home_assets/img/lf20_ctyyicne.json"
+							background="transparent" speed="1" style="width: 120px; height: 100px;" loop autoplay class="arrow1">
+						</lottie-player>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<?php if($this->session->userdata('lang') =='en') { ?>
+						<img src="<?php echo base_url()?>assets/home_assets/img/home/chick.svg" width="330px"
+							height="330px" class="chick">
+						<?php } else if ($this->session->userdata('lang') =='ar'){ ?>
+						<img src="<?php echo base_url()?>assets/home_assets/img/chick.svg" width="250px"
+							height="250px" class="chick">
+						<?php } ?>
+
+					</div>
+					<div class="col-md-6">
+						<h5 class="text-center title-pro" data-aos="fade-up" data-aos-delay="400">
+							<?php if($session == 'en'){ echo $home->secsub2_title; }else{ echo $home->secsub2_title_ar; }?> <span
+								class="num">02</span></h5>
+						<p class="text-right para-right" data-aos="fade-up" data-aos-delay="600">
+							<?php if($session == 'en'){ echo $home->secsub2_content; }else{ echo $home->secsub2_content_ar; }?></p>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-md-7"></div>
+					<div class="col-md-5">
+						<lottie-player src="<?php echo base_url()?>assets/home_assets/img/lf20_jem05ee6.json"
+							background="transparent" speed="1" style="width: 120px; height: 100px;" loop autoplay class="arrow2">
+						</lottie-player>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-7">
+						<h4><span class="num" data-aos="fade-up"
+								data-aos-delay="400">03</span><?php if($session == 'en'){ echo $home->secsub3_title; }else{ echo $home->secsub3_title_ar; }?>
+						</h4>
+						<p data-aos="fade-up" data-aos-delay="400">
+							<?php if($session == 'en'){ echo $home->secsub3_content; }else{ echo $home->secsub3_content_ar; }?></p>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-md-7"></div>
+					<div class="col-md-5">
+						<lottie-player src="<?php echo base_url()?>assets/home_assets/img/lf20_ctyyicne.json"
+							background="transparent" speed="1" style="width: 90px; height: 90px;" loop autoplay class="arrow3">
+						</lottie-player>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5"></div>
+					<div class="col-md-7">
+						<h4 class="text-center title-pro" data-aos="fade-up" data-aos-delay="400">
+							<?php if($session == 'en'){ echo $home->secsub4_title; }else{ echo $home->secsub4_title_ar; }?> <span
+								class="num">04</span></h4>
+						<p class="text-right para-right" data-aos="fade-up" data-aos-delay="400">
+							<?php if($session == 'en'){ echo $home->secsub4_content; }else{ echo $home->secsub4_content_ar; }?></p>
+					</div>
+
+				</div>
+			</div>
+	</section>
+	<section class="products">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="text-center title" data-aos="fade-down" data-aos-delay="400">
+						<?php if($session == 'en'){ echo $home->sec2_title; }else{ echo $home->sec2_title_ar; }?> </h3>
+					<p class="text-center" data-aos="fade-down" data-aos-delay="400">
+						<?php if($session == 'en'){ echo $home->sec2_content; }else{ echo $home->sec2_content_ar; }?></p>
+				</div>
+			</div>
+			<div class="container">
+				<br><br><br>
+				<div class="row">
+					<?php $i=0; foreach ($products as $value) { $i++;  ?>
+					<div class="col-md-4">
+						<?php if($i == 2) { ?>
+						<p class="text-center"><a class="cta-btn" href="#">Visit Shop</a></p>
+						<?php } ?>
+						<div class="effect-1">
+							<div class="effect-img">
+								<img src="<?php echo base_url()?>uploads/images/products/<?php echo $value['image']?>" alt="Team Image">
+							</div>
+							<div class="effect-text">
+								<h2><?php 
+                            if($session == 'en'){
+                              echo $value['name']   ;
+                            }else{
+                              echo $value['name_ar']  ; 
+                            }
+                            ?></h2>
+								<p><?php 
+                            if($session == 'en'){
+                              echo $value['description']   ;
+                            }else{
+                              echo $value['description_ar']  ; 
+                            }
+                            ?></p>
+							</div>
+						</div>
+					</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+	<section class="feature-product">
+		<div class="container">
+
+			<br><br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<h3 class="title" data-aos="fade-up" data-aos-delay="400">
+						<?php if($session == 'en'){ echo $home->sec3_title; }else{ echo $home->sec3_title_ar; }?></h3>
+					<p data-aos="fade-up" data-aos-delay="400">
+						<?php if($session == 'en'){ echo $home->sec3_content; }else{ echo $home->sec3_content_ar; }?></p>
+					<img src="<?php echo base_url()?>uploads/images/home/<?php echo $home->sec3_img ?>" width="500px"
+						height="300px" class="img-fluid">
+					<div class="row ed">
+						<div class="col-md-1"></div>
+						<div class="col-md-9">
+							<div class="box2">
+								<div class="row">
+									<div class="col-md-4">
+										<p class="typewriter"><img src="<?php echo base_url()?>assets/home_assets/img/home/ico.png"
+												width="20px" height="20px">100% <span class="fresh-in">fresh</span></p>
+									</div>
+									<div class="col-md-4">
+										<p class="typewriter2"><img src="<?php echo base_url()?>assets/home_assets/img/home/ico.png"
+												width="20px" height="20px">100% Certified</p>
+									</div>
+									<div class="col-md-4">
+										<p class="typewriter3"><img src="<?php echo base_url()?>assets/home_assets/img/home/ico.png"
+												width="20px" height="20px">100% <span class="fresh-in">Organic</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="row top-m">
+						<div class="col-md-5">
+							<div class="grey-box">
+								<p class="text-center">
+									<img src="<?php echo base_url()?>uploads/images/home/<?php echo $feature[0]['img']?>"
+										class="icon-design">
+								</p>
+								<h6 class="text-center">
+									<?php if($session == 'en'){ echo $feature[0]['name']; }else{ echo $feature[0]['name_ar']; }?></h6>
+							</div>
+
+						</div>
+						<div class="col-md-5">
+							<div class="grey-box">
+								<p class="text-center"> <img
+										src="<?php echo base_url()?>uploads/images/home/<?php echo $feature[1]['img']?>"
+										class="icon-design"></p>
+								<h6 class="text-center">
+									<?php if($session == 'en'){ echo $feature[1]['name']; }else{ echo $feature[1]['name_ar']; }?></h6>
+							</div>
+
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					<div class="row top-m">
+						<div class="col-md-5">
+							<div class="grey-box">
+								<p class="text-center"> <img
+										src="<?php echo base_url()?>uploads/images/home/<?php echo $feature[2]['img']?>"
+										class="icon-design"></p>
+								<h6 class="text-center">
+									<?php if($session == 'en'){ echo $feature[2]['name']; }else{ echo $feature[2]['name_ar']; }?></h6>
+							</div>
+
+						</div>
+						<div class="col-md-5">
+							<div class="grey-box">
+								<p class="text-center"> <img
+										src="<?php echo base_url()?>uploads/images/home/<?php echo $feature[3]['img']?>"
+										class="icon-design"></p>
+								<h6 class="text-center">
+									<?php if($session == 'en'){ echo $feature[3]['name']; }else{ echo $feature[3]['name_ar']; }?></h6>
+							</div>
+
+						</div>
+						<br>
+						<div class="col-md-2"></div>
+					</div>
+					<div class="row top-m">
+						<div class="col-md-5">
+							<div class="grey-box">
+								<p class="text-center"> <img
+										src="<?php echo base_url()?>uploads/images/home/<?php echo $feature[4]['img']?>"
+										class="icon-design"></p>
+								<h6 class="text-center">
+									<?php if($session == 'en'){ echo $feature[4]['name']; }else{ echo $feature[4]['name_ar']; }?></h6>
+							</div>
+
+						</div>
+						<div class="col-md-5">
+							<div class="grey-box">
+								<p class="text-center"> <img
+										src="<?php echo base_url()?>uploads/images/home/<?php echo $feature[5]['img']?>"
+										class="icon-design"></p>
+								<h6 class="text-center">
+									<?php if($session == 'en'){ echo $feature[5]['name']; }else{ echo $feature[5]['name_ar']; }?></h6>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		</div>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="text-center title" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+						<?php if($session == 'en'){ echo $home->sec4_title; }else{ echo $home->sec4_title_ar; }?>
+					</h3>
+					<br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-4">
+					<div class="img-bb" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+						<img src="<?php echo base_url()?>uploads/images/home/<?php echo $home->sec4_img1?>" width="300px"
+							height="200px">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<img src="<?php echo base_url()?>uploads/images/home/<?php echo $home->sec4_img2?>" width="300px"
+						height="200px" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="text-center title" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+						<?php if($session == 'en'){ echo $home->sec5_title; }else{ echo $home->sec5_title_ar; }?></h3>
+					<hr class="linee">
+					<br>
+				</div>
+			</div>
+			<div class="row">
+				
+				<div class="col-md-6">
+					<?php
+                    // query the user media
+                    $fields = "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username";
+                    $token = "IGQVJYOVdlcXBiVWxrVHpOTHB2V185N2wwMUFSM3RTWF9ya19nLWhxUFhieVlrZAm0zMTVfYzJLODFsLW43cWF3UzRVdml0NVlPOXUyRy1LbnlWTWhMSUo2OFhUSllLWG5kU1JOdWZAFS1c3U1dQbmU5RAZDZD";
+
+                    $json_feed_url = "https://graph.instagram.com/me/media?fields={$fields}&access_token={$token}";
+                    $json_feed = @file_get_contents($json_feed_url);
+                    $contents = json_decode($json_feed, true, 512, JSON_BIGINT_AS_STRING);
+
+                    echo "<div class='ig_feed_container'>";
+                    foreach ($contents["data"] as $post) {
+
+                        $username = isset($post["username"]) ? $post["username"] : "";
+                        $caption = isset($post["caption"]) ? $post["caption"] : "";
+                        $media_url = isset($post["media_url"]) ? $post["media_url"] : "";
+                        $permalink = isset($post["permalink"]) ? $post["permalink"] : "";
+                        $media_type = isset($post["media_type"]) ? $post["media_type"] : "";
+
+                        echo "
+            <div class='ig_post_container'>
+                <div>";
+
+                        if ($media_type == "VIDEO") {
+                            echo "<video controls style='width:100%; display: block !important;'>
+                            <source src='{$media_url}' type='video/mp4'>
+                            Your browser does not support the video tag.
+                        </video>";
+                        } else {
+                            echo "<img src='{$media_url}' />";
+                        }
+
+                        echo "</div>
+                <div class='ig_post_details'>
+                    <div>
+                        <strong>@{$username}</strong> {$caption}
+                    </div>
+                    <div class='ig_view_link'>
+                        <a href='{$permalink}' target='_blank'>View on Instagram</a>
+                    </div>
+                </div>
+            </div>
+        ";
+                    }
+                    echo "</div>"
+                    ?>
+				</div>
+				<div class="col-md-6">
+					<div class="chicken2">
+						<div class="head">
+							<div class="hair">
+
+							</div>
+						</div>
+						<div class="beak">
+
+						</div>
+						<div class="body">
+
+						</div>
+						<div class="tail">
+
+						</div>
+						<div class="leg one">
+
+						</div>
+						<div class="leg two">
+
+						</div>
+					</div>
+					<h2 class="h2">___Delmon____</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ======= Recent Blog Posts Section ======= -->
+	<section id="recent-blog-posts" class="recent-blog-posts">
+
+		<div class="container" data-aos="fade-up">
+
+			<div class="section-header">
+				<h3 class="text-center title">
+					<?php if($session == 'en'){ echo $home->sec6_title; }else{ echo $home->sec6_title_ar; }?></h3>
+				</h3>
+			</div>
+
+			<div class="row">
+
+      <?php foreach ($news as $key) { ?>
+				<div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+					<div class="post-box">
+						<div class="post-img"><img src="<?php echo base_url()?>uploads/images/blog/<?php echo $key['img']?>"
+								class="img-fluid" alt=""></div>
+						<div class="b-box">
+
+							<h5 class="post-title"><?php if($session == 'en'){ echo $key['title']; }else{ echo $key['title_ar']; }?></h5>
+							<p><?php if($session == 'en'){ echo $key['min_content']; }else{ echo $key['min_content_ar']; }?></p>
+
+							<!-- <a class="btn readmore stretched-link" data-bs-toggle="collapse" href="#collapseExample" role="button"
+								aria-expanded="false" aria-controls="collapseExample">More</a>
+							<p class="collapse" id="collapseExample">
+              <?php if($session == 'en'){ echo $key['content']; }else{ echo $key['content_ar']; }?></p> -->
+							<a class="btn readmore stretched-link"  href="<?php echo $key['content'];?>" role="button"
+								 aria-controls="collapseExample">More</a>
+							<div class="meta">
+								<span class="post-date"><?php echo $key['date'];?></span>
+							</div>
+						</div>
+					</div>
+				</div>
+        <?php } ?>
+			</div>
+
+		</div>
+
+	</section><!-- End Recent Blog Posts Section -->
+
+	<!-- ======= Footer ======= -->
+	<?php $this->load->view('home/footer',$data);?>
+	<!-- End Footer -->
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<!-- Vendor JS Files -->
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/aos/aos.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="<?php echo base_url()?>assets/home_assets/vendor/php-email-form/validate.js"></script>
+<script>
+if(navigator.userAgent.indexOf('Mac') > 0)
+$('body').addClass('mac-os');if(navigator.userAgent.indexOf('Safari') > 0)
+$('body').addClass('safari');if(navigator.userAgent.indexOf('Chrome') > 0)
+$('body').addClass('chrome');
+</script>
+	<!-- Template Main JS File -->
+	<script src="<?php echo base_url()?>assets/home_assets/js/main.js"></script>
+<script>
+if(navigator.userAgent.indexOf('Mac') > 0)
+$('body').addClass('mac-os');
+</script>
+</body>
+
+</html>

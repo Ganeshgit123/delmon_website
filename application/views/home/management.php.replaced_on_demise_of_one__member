@@ -1,0 +1,826 @@
+<?php
+  $session = $this->session->userdata('lang');
+    if(empty($session)){ 
+    $this->session->set_userdata('lang', 'en');
+    $this->session->set_userdata('dir', 'ltr');
+    } 
+?>
+<!doctype html>
+<html lang="<?php echo $_SESSION["lang"] ?>" dir="<?php echo $_SESSION["dir"] ?>">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<title>Delmon Poultry</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="<?php echo base_url()?>assets/home_assets/img/fav.png" rel="icon">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Vendor CSS Files -->
+  <link href="<?php echo base_url()?>assets/home_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url()?>assets/home_assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="<?php echo base_url()?>assets/home_assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="<?php echo base_url()?>assets/home_assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="<?php echo base_url()?>assets/home_assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="<?php echo base_url()?>assets/home_assets/css/variables.css" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="<?php echo base_url()?>assets/home_assets/css/main.css" rel="stylesheet">
+  <style>
+    section {
+      padding: 20px 0 !important;
+      overflow: visible !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <?php 
+	$data['page'] = 'management' ;
+	$data['menu'] = $menu ;
+	$data['link'] = $link ;
+	$data['address'] = $address ;
+	$data['contact'] = $contact ;
+	$this->load->view('home/header',$data);
+ 	?>
+  <section id="management" style="background:url(<?php echo base_url()?>uploads/images/banners/<?php echo $banner->image ?>) !important; height: 450px;background-position: center;
+    width: 100%;background-size: cover;background-repeat: no-repeat;" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+
+        <div class="section-header">
+          <h2 class="text-center"><?php if($session == 'en') {
+echo $banner->banner_title;}
+elseif ($session =='ar') {
+  echo $banner->banner_title_ar;} ?> </h2>
+          <p class="text-center"><?php 
+            if($session == 'en'){
+                echo $banner->banner_content  ;
+            }else{
+                echo $banner->banner_content_ar ; 
+            }
+            ?></p>
+        </div>
+
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ======= About Section ======= -->
+  <!-- <section id="management" class="management">
+    <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-md-12 section-header">
+        <h2></h2>
+        <p>Architecto nobis eos vel nam quidem vitae temporibus voluptates qui hic deserunt iusto omnis nam voluptas asperiores sequi tenetur dolores incidunt enim voluptatem magnam cumque fuga.</p>
+      </div>
+</div>
+</div>
+</section> -->
+
+  <!-- Tabs -->
+  <section class="b-management">
+    <div class="container-fluid">
+      <div class="row">
+        <?php $managedata = $this->Admin_model->get_all_data('commitee_master_type');  ?>
+        <div class="col-md-12">
+
+          <ul class="nav nav-pills  mb-3">
+            <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">
+                <?php if($session == 'en') {
+echo $managedata[0]['type'];}
+elseif ($session == 'ar') {
+  echo $managedata[0]['type_ar'];} ?>
+
+
+              </a></li>
+
+            <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">
+                <?php if($session == 'en') {
+echo $managedata[1]['type'];}
+elseif ($session == 'ar') {
+  echo $managedata[1]['type_ar'];} ?>
+
+              </a></li>
+
+          </ul><!-- End Tabs -->
+        </div>
+      </div>
+  </section>
+  <!-- Tab Content -->
+  <section>
+
+    <div class="container">
+      <div class="tab-content">
+
+        <div class="tab-pane fade  show active" id="tab1">
+          <div class="des">
+            <div class="row">
+              <div class="col-md-4" style="margin-left:50px"></div>
+              <div class="col-md-3">
+                <img src="<?php echo base_url()?>assets/home_assets/img/redbox.svg" class="redbox">
+                <div class="item-manage" style="margin-top:-3rem">
+
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[0]['image']?>">
+                  <div class="content1">
+                    <p><?php if($session == 'en') {
+echo  $management[0]['name'];}
+elseif ($session == 'ar') {
+  echo  $management[0]['name_ar'];} ?> </p>
+                    <h6><?php if($session == 'en') {
+echo  $management[0]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[0]['designation_ar'];} ?> </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- row item -->
+            <div class="row top-p">
+              <div class="col-md-3"></div>
+              <div class="col-md-3">
+                <div class="item-manage">
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[1]['image']?>">
+                  <div class="content2">
+                    <p><?php if($session == 'en') {
+echo $management[1]['name'];}
+elseif ($session == 'ar') {
+  echo  $management[1]['name_ar'];} ?></p>
+                    <h6><?php if($session == 'en') {
+echo $management[1]['designation'];}
+elseif ($session == 'ar') {
+  echo  $management[1]['designation_ar'];} ?></h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="item-manage">
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[2]['image']?>">
+                  <div class="content2">
+                    <p> <?php if($session == 'en') {
+echo $management[2]['name'];}
+elseif ($session == 'ar') {
+  echo $management[2]['name_ar'];} ?></p>
+                    <h6><?php if($session == 'en') {
+echo $management[2]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[2]['designation_ar'];} ?>
+                    </h6>
+
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+            <!-- row item -->
+            <div class="row top-p">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <div class="item-manage">
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[3]['image']?>">
+                  <div class="content2">
+                    <p> <?php if($session == 'en') {
+echo $management[3]['name'];}
+elseif ($session == 'ar') {
+  echo $management[3]['name_ar'];} ?></p>
+                    <h6><?php if($session == 'en') {
+echo $management[3]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[3]['designation_ar'];} ?></h6>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="item-manage">
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[4]['image']?>">
+                  <div class="content2">
+                    <p> <?php if($session == 'en') {
+echo $management[4]['name'];}
+elseif ($session == 'ar') {
+  echo $management[4]['name_ar'];} ?></p>
+                    <h6><?php if($session == 'en') {
+echo $management[4]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[4]['designation_ar'];} ?>
+                    </h6>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="item-manage">
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[5]['image']?>">
+                  <div class="content2">
+                    <p> <?php if($session == 'en') {
+echo $management[5]['name'];}
+elseif ($session == 'ar') {
+  echo $management[5]['name_ar'];} ?></p>
+                    <h6><?php if($session == 'en') {
+echo $management[5]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[5]['designation_ar'];} ?>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- row item -->
+            <div class="row top-p">
+              <div class="col-md-3"></div>
+              <div class="col-md-3">
+                <div class="item-manage">
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[6]['image']?>">
+                  <div class="content2">
+                    <p> <?php if($session == 'en') {
+echo $management[6]['name'];}
+elseif ($session == 'ar') {
+  echo $management[6]['name_ar'];} ?></p>
+                    <h6><?php if($session == 'en') {
+echo $management[6]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[6]['designation_ar'];} ?>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="item-manage">
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[7]['image']?>">
+                  <div class="content2">
+                    <p> <?php if($session == 'en') {
+echo $management[7]['name'];}
+elseif ($session == 'ar') {
+  echo $management[7]['name_ar'];} ?></p>
+                    <h6><?php if($session == 'en') {
+echo $management[7]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[7]['designation_ar'];} ?>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- row item -->
+            <div class="row top-p">
+              <div class="col-md-3"></div>
+              <div class="col-md-3">
+                <div class="item-manage">
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[8]['image']?>">
+                  <div class="content2">
+                    <p> <?php if($session == 'en') {
+echo $management[8]['name'];}
+elseif ($session == 'ar') {
+  echo $management[8]['name_ar'];} ?></p>
+                    <h6><?php if($session == 'en') {
+echo $management[8]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[8]['designation_ar'];} ?>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="item-manage">
+                  <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[9]['image']?>">
+                  <div class="content2">
+                    <p> <?php if($session == 'en') {
+echo $management[9]['name'];}
+elseif ($session == 'ar') {
+  echo $management[9]['name_ar'];} ?></p>
+                    <h6><?php if($session == 'en') {
+echo $management[9]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[9]['designation_ar'];} ?>
+                    </h6>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- row item -->
+
+        </div>
+        <!-- ----------------------------------------------------------------------------------------------- End Tab 1 Content -->
+
+        <div class="tab-pane fade show commi" id="tab2">
+          <section>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+
+                  <ul class="nav nav-pills  nav-fill nav-paginator" data-paginator-item-count="4"
+                    data-paginator-buttons-class="nav-link" id="nav-pills">
+
+                    <?php 
+            $i=0;
+            foreach ($type as $key ) { ?>
+                    <li><a class="nav-link <?php if($i==0){echo "active";}  ?>" data-bs-toggle="pill"
+                        href="#com<?php echo $key['id']?>">
+                        <?php if($session == 'en') {
+                  echo $key['type'];}
+                  elseif ($session == 'ar') {
+                    echo $key['type_ar'];}
+                    $i++; ?>
+                      </a></li>
+                    <?php   } ?>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </section>
+          <div class="tab-content ">
+            <div class="tab-pane fade show  active " id="com1" role="tabpanel">
+              <div class="rec">
+                <div class="row top-p">
+                  <div class="col-md-5 ri-rec"></div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[10]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[10]['name'];}
+elseif ($session == 'ar') {
+  echo $management[10]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[10]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[10]['designation_ar'];} ?>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- row item -->
+                <div class="row top-p">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[11]['image']?>">
+                      <div class="content2">
+                        <p><?php if($session == 'en') {
+echo $management[11]['name'];}
+elseif ($session == 'ar') {
+  echo $management[11]['name_ar'];} ?> </p>
+                        <h6><?php if($session == 'en') {
+echo $management[11]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[11]['designation_ar'];} ?>
+
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[12]['image']?>">
+                      <div class="content2">
+                        <p><?php if($session == 'en') {
+echo $management[12]['name'];}
+elseif ($session == 'ar') {
+  echo $management[12]['name_ar'];} ?> </p>
+                        <h6><?php if($session == 'en') {
+echo $management[12]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[12]['designation_ar'];} ?>
+
+                        </h6>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[13]['image']?>">
+                      <div class="content2">
+                        <p><?php if($session == 'en') {
+echo $management[13]['name'];}
+elseif ($session == 'ar') {
+  echo $management[13]['name_ar'];} ?> </p>
+                        <h6><?php if($session == 'en') {
+echo $management[13]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[13]['designation_ar'];} ?>
+
+                        </h6>
+                        <p></p>
+                        <h6></h6>
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- row item -->
+            </div>
+            <!-- end 1st tab -->
+            <div class="tab-pane fade show" id="com2" role="tabpanel">
+              <div class="rec">
+                <div class="row top-p">
+                  <div class="col-md-5 ri-rec"></div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[14]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[14]['name'];}
+elseif ($session == 'ar') {
+  echo $management[14]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[14]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[14]['designation_ar'];} ?>
+                        </h6>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <!-- row item -->
+                <div class="row top-p">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[15]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[15]['name'];}
+elseif ($session == 'ar') {
+  echo $management[15]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[15]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[15]['designation_ar'];} ?>
+                        </h6>
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[16]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[16]['name'];}
+elseif ($session == 'ar') {
+  echo $management[16]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[16]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[16]['designation_ar'];} ?>
+                        </h6>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[17]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[17]['name'];}
+elseif ($session == 'ar') {
+  echo $management[17]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[17]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[17]['designation_ar'];} ?>
+                        </h6>
+
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- row item -->
+            </div>
+            <!-- End Tab2 -->
+            <div class="tab-pane fade show" id="com3" role="tabpanel">
+              <div class="rec">
+                <div class="row top-p">
+                  <div class="col-md-5 ri-rec"></div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[18]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[18]['name'];}
+elseif ($session == 'ar') {
+  echo $management[18]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[18]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[18]['designation_ar'];} ?>
+                        </h6>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <!-- row item -->
+                <div class="row top-p">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[19]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[19]['name'];}
+elseif ($session == 'ar') {
+  echo $management[19]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[19]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[19]['designation_ar'];} ?>
+                        </h6>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[20]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[20]['name'];}
+elseif ($session == 'ar') {
+  echo $management[20]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[20]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[20]['designation_ar'];} ?>
+                        </h6>
+
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[21]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[21]['name'];}
+elseif ($session == 'ar') {
+  echo $management[21]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[21]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[21]['designation_ar'];} ?>
+                        </h6>
+
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- row item -->
+            </div>
+            <!-- End Tab2 -->
+            <div class="tab-pane fade show" id="com4" role="tabpanel">
+              <div class="rec">
+                <div class="row top-p">
+                  <div class="col-md-5 ri-rec"></div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[22]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[22]['name'];}
+elseif ($session == 'ar') {
+  echo $management[22]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[22]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[22]['designation_ar'];} ?>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <!-- row item -->
+                <div class="row top-p">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[23]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[23]['name'];}
+elseif ($session == 'ar') {
+  echo $management[23]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[23]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[23]['designation_ar'];} ?>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[24]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[24]['name'];}
+elseif ($session == 'ar') {
+  echo $management[24]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[24]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[24]['designation_ar'];} ?>
+                        </h6>
+
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="item-manage">
+                      <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[25]['image']?>">
+                      <div class="content2">
+                        <p> <?php if($session == 'en') {
+echo $management[25]['name'];}
+elseif ($session == 'ar') {
+  echo $management[25]['name_ar'];} ?></p>
+                        <h6><?php if($session == 'en') {
+echo $management[25]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[25]['designation_ar'];} ?>
+                        </h6>
+
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+                <!-- row item -->
+              </div>
+            </div>
+            <!-- End Tab2 -->
+            <div class="tab-pane fade show" id="com5" role="tabpanel">
+
+
+              <!-- row item -->
+              <div class="row top-p">
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                  <div class="item-manage">
+                    <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[26]['image']?>">
+                    <div class="content2">
+                      <p> <?php if($session == 'en') {
+echo $management[26]['name'];}
+elseif ($session == 'ar') {
+  echo $management[26]['name_ar'];} ?></p>
+                      <h6><?php if($session == 'en') {
+echo $management[26]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[26]['designation_ar'];} ?>
+                      </h6>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="item-manage">
+                    <img src="<?php echo base_url()?>uploads/images/management/<?php echo $management[27]['image']?>">
+                    <div class="content2">
+                      <p> <?php if($session == 'en') {
+echo $management[27]['name'];}
+elseif ($session == 'ar') {
+  echo $management[27]['name_ar'];} ?></p>
+                      <h6><?php if($session == 'en') {
+echo $management[27]['designation'];}
+elseif ($session == 'ar') {
+  echo $management[27]['designation_ar'];} ?>
+                      </h6>
+
+                    </div>
+                    <br>
+                  </div>
+                </div>
+
+              </div>
+              <!-- row item -->
+            </div>
+            <!-- End Tab2 -->
+
+            <!-- Start dynamic management data -->
+            <?php foreach ($type as $value ) {
+								if($value['id'] > 5){  ?>
+            <div class="tab-pane fade show" id="<?php echo "com".$value['id']?>" role="tabpanel">
+              <div class="row top-p">
+                <?php 
+											$datamanagement = $this->Admin_model->get_all_data('management',array('status'=>'Y','sub_type'=>$value['id'])); 
+											foreach ($datamanagement as $key ) { ?>
+                <div class="col-md-3">
+                  <div class="item-manage">
+                    <img src="<?php echo base_url()?>uploads/images/management/<?php echo $key['image']?>">
+                    <div class="content2">
+                      <p> <?php if($session == 'en') {
+															echo $key['name'];}
+															elseif ($session == 'ar') {
+															echo $key['name_ar'];} ?></p>
+                      <h6><?php if($session == 'en') {
+															echo $key['designation'];}
+															elseif ($session == 'ar') {
+															echo $key['designation_ar'];} ?>
+                      </h6>
+
+                    </div>
+                  </div>
+                </div>
+                <?php } ?>
+              </div>
+            </div>
+            <?php } } ?>
+            <!--End dynamic management data -->
+
+          </div>
+        </div><!-- End Tab 2 Content -->
+
+      </div>
+    </div>
+  </section>
+  </div>
+  </section><!-- End About Section -->
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <?php $this->load->view('home/footer',$data);?>
+  <!-- End Footer -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="<?php echo base_url()?>assets/home_assets/js/bootstrap-nav-paginator.min.js"></script>
+  <script src="<?php echo base_url()?>assets/home_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url()?>assets/home_assets/vendor/aos/aos.js"></script>
+  <script src="<?php echo base_url()?>assets/home_assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="<?php echo base_url()?>assets/home_assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="<?php echo base_url()?>assets/home_assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="<?php echo base_url()?>assets/home_assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="<?php echo base_url()?>assets/home_assets/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $(window).scroll(function () {
+
+        console.log($(window).scrollTop());
+
+        if ($(window).scrollTop() > 400) {
+          $('#nav-pills').addClass('sticky');
+        }
+
+        if ($(window).scrollTop() < 400) {
+          $('#nav-pills').removeClass('sticky');
+        }
+      });
+    });
+  </script>
+  <script>
+    if (navigator.userAgent.indexOf('Mac') > 0)
+      $('body').addClass('mac-os');
+    if (navigator.userAgent.indexOf('Safari') > 0)
+      $('body').addClass('safari');
+    if (navigator.userAgent.indexOf('Chrome') > 0)
+      $('body').addClass('chrome');
+  </script>
+</body>
+
+</html>

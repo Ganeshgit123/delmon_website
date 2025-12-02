@@ -1,0 +1,47 @@
+
+---Upload files---
+Content file was not uploaded. Error: No file provided.
+
+---Upload files---
+Customizer file was not uploaded. Error: No file provided.
+
+---Upload files---
+Redux file was not uploaded. Error: No file provided.
+
+---Upload files---
+The import files were successfully uploaded!
+Initial max execution time = 30
+Files info:
+Site URL = https://dawajen.bh/news
+Data file = not defined!
+Widget file = /var/www/html/news/wp-content/uploads/2023/05/widgets.wie
+Customizer file = not defined!
+Redux files:
+not defined!
+
+---Importing widgets---
+Sidebar : 
+
+Block - No Title - Widget already exists
+Block - No Title - Imported
+Ascendoor Trending Posts Widget - Trending Posts - Imported
+Block - No Title - Widget already exists
+
+Footer Widget 1 : 
+
+Block - No Title - Imported
+Block - No Title - Imported
+Ascendoor Social Icons - No Title - Imported
+
+Footer Widget 2 : 
+
+Block - No Title - Imported
+
+Footer Widget 3 : 
+
+Ascendoor Posts Slider Widget - Most Viewed - Imported
+
+
+
+---ocdi/after_import---
+
