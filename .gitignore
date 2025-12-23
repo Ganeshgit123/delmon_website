@@ -1,0 +1,4 @@
+# Ignore top-level logs directory
+logs/
+# Keep placeholder file tracked
+!logs/.gitkeep
